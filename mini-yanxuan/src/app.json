@@ -6,7 +6,12 @@
     "pages/category/main",
     "pages/cart/main",
     "pages/my/main",
-    "pages/mappage/main"
+    "pages/mappage/main",
+    "pages/search/main",
+    "pages/goods/main",
+    "pages/order/main",
+    "pages/addAddress/main",
+    "pages/addressSelect/main"
     
   ],
   "window": {

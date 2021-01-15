@@ -3,13 +3,18 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
+export default new Vuex.Store({
     state: {
-        cityName: "定位中.."
+        cityname: "定位中.."
     },
     mutations: {
-        update(state, config) {
-
+        //更新state的数据
+        UPDATE(state, data) {
+            // Object.keys()详解 ： https://www.cnblogs.com/llcdxh/p/9476347.html
+            //map()可以遍历array [Object.keys()返回的就是一个array ]
+            Object.keys(data).map((item, key) => {
+                state[item] = data[item]
+            })
         }
     }
-})
+});

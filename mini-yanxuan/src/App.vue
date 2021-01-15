@@ -10,6 +10,11 @@ export default {
      * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
      */
 
+    var openId = userInfo.openId;
+    wx.setStorageSync("userInfo", userInfo);
+    wx.setStorageSync("openId", openId);
+    console.log("app created and cache logs by setStorageSync");
+
     let logs
     if (mpvuePlatform === 'my') {
       logs = mpvue.getStorageSync({key: 'logs'}).data || []

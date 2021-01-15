@@ -19,6 +19,7 @@
 <script>
 
 import amapFile from "../../utils/amap-wx";
+import { mapMutations } from "vuex";
 
 export default {
     name: "MapPage",
@@ -75,9 +76,9 @@ export default {
                 }
             });
         },
-        //触摸“关键字的联想词”，触发touchstart事件，
+        //触摸“关键字的联想词”，触发touchstart事件，调用bindSearch
         bindSearch(cityname){
-            console.log(cityname);
+            this.$store.commit('UPDATE', {cityname: cityname});
             wx.navigateBack({//返回上级页面
                  delta: 1 //delta等于n，就返回上n级页面，直立式返回上一级页面，即首页
             });
